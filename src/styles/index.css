@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Roboto+Mono:wght@300;400;500;700&display=swap');
+
+:root {
+  --gray-subtle: #7f7d7d;
+  --acid-green: #DFFF00;
+  --font-serif: 'Playfair Display', serif;
+  --font-mono: 'Roboto Mono', monospace;
+  --border-radius: 8px;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+
+  /* Responsive Variables Defaults (Desktop) */
+  --frame-offset-v: 3.5vh;
+  --frame-offset-h: 3.5vw;
+  --header-padding: 0 40px;
+  --header-top: 30px;
+  --footer-padding: 0 40px;
+  --footer-bottom: 30px;
+  --meta-font-size: 9px;
+  --bg-text-size: 14vw;
+  --bg-text-spacing: -10px;
+  --card-width: 34vw;
+  --card-margin: 0 2vw;
+  --card-title-size: 32px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #050505;
+  color: #ffffff;
+  font-family: var(--font-mono);
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 🖼️ VIEWPORT FRAME */
+.viewport-frame {
+  position: absolute;
+  top: var(--frame-offset-v);
+  left: var(--frame-offset-h);
+  right: var(--frame-offset-h);
+  bottom: var(--frame-offset-v);
+  border: 2px solid rgba(230, 230, 230, 0.05);
+  background-color: #474545;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.8);
+
+  /* Subtle Interactive Glow */
+  background: radial-gradient(circle at var(--mouse-x) var(--mouse-y),
+      rgba(223, 255, 0, 0.015) 0%,
+      transparent 50%);
+}
+
+/* 📐 CORNER ACCENTS (The "arrows" or markers) */
+.frame-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 4px solid var(--acid-green);
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.corner-tl {
+  top: -1px;
+  left: -1px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.corner-tr {
+  top: -1px;
+  right: -1px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.corner-bl {
+  bottom: -1px;
+  left: -1px;
+  border-right: none;
+  border-top: none;
+}
+
+.corner-br {
+  bottom: -1px;
+  right: -1px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Fluid Marquee Animation */
+@keyframes infiniteScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.carousel-track {
+  display: flex;
+  width: fit-content;
+  animation: infiniteScroll 80s linear infinite;
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 1024px) {
+  :root {
+    --card-width: 50vw;
+    --bg-text-size: 16vw;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --frame-offset-v: 2vh;
+    --frame-offset-h: 2vw;
+    --header-padding: 0 25px;
+    --footer-padding: 0 25px;
+    --bg-text-size: 18vw;
+    --card-width: 65vw;
+  }
+
+  .viewport-frame {
+    top: var(--frame-offset-v);
+    left: var(--frame-offset-h);
+    right: var(--frame-offset-h);
+    bottom: var(--frame-offset-v);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --frame-offset-v: 1.5vh;
+    --frame-offset-h: 1.5vw;
+    --header-padding: 0 20px;
+    --header-top: 20px;
+    --footer-padding: 0 20px;
+    --footer-bottom: 20px;
+    --meta-font-size: 8px;
+    --bg-text-size: 15vw; /* Reduced from 20vw */
+    --bg-text-spacing: -3px;
+    --card-width: 85vw;
+    --card-margin: 0 3vw;
+    --card-title-size: 22px; /* Slightly smaller */
+  }
+  
+  .carousel-track {
+    animation-duration: 40s; /* Faster scroll on mobile as cards are fewer per width */
+  }
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scrollbar-width: none;
+}
