@@ -16,11 +16,12 @@
  *    b) Usar una URL externa directa (como se muestra abajo).
  */
 
-import imgPizzaAura from '../assets/images/pizza-aura.png';
-import imgWebsiteGym from '../assets/images/website-gym.jpg';
-import imgHubbica from '../assets/images/hubbica.jpg';
-import imgAntojitos from '../assets/images/antojitos.jpg';
-import imgOficlic from '../assets/images/oficlic.jpg';
+import imgPizzaAura from '../assets/images/aurapizza.png';
+import imgWebsiteGym from '../assets/images/gym.png';
+import imgHubbica from '../assets/images/hubbica.png';
+import imgAntojitos from '../assets/images/antojitos.png';
+import imgOficlic from '../assets/images/oficlic.png';
+import imgSkin from '../assets/images/skin.png';
 
 export const projects = [
     {
@@ -67,5 +68,14 @@ export const projects = [
         description: 'Directorio inteligente que conecta problemas con profesionales expertos. Enfoque directo, confiable y de alta usabilidad.',
         url: 'https://officlic-header-react-magic.vercel.app/',
         image: imgOficlic,
+    },
+    {
+        id: 6,
+        title: 'Skin Care',
+        category: 'BEAUTY · E-COMMERCE',
+        year: '2026',
+        description: 'Plataforma ecommerce elegante y minimalista para productos de cuidado de la piel. Diseño moderno y sofisticado.',
+        url: 'https://softcare-skin.netlify.app/',
+        image: imgSkin,
     },
 ];
