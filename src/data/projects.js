@@ -22,6 +22,7 @@ import imgHubbica from '../assets/images/hubbica.png';
 import imgAntojitos from '../assets/images/antojitos.png';
 import imgOficlic from '../assets/images/oficlic.png';
 import imgSkin from '../assets/images/skin.png';
+import imgDental from '../assets/images/dental.png';
 
 export const projects = [
     {
@@ -77,5 +78,14 @@ export const projects = [
         description: 'Plataforma ecommerce elegante y minimalista para productos de cuidado de la piel. Diseño moderno y sofisticado.',
         url: 'https://softcare-skin.netlify.app/',
         image: imgSkin,
+    },
+    {
+        id: 7,
+        title: 'Clinica Dental',
+        category: 'HEALTH · DENTAL',
+        year: '2026',
+        description: 'Sitio web profesional para una clínica dental. Diseño limpio, confiable y centrado en la experiencia del paciente.',
+        url: 'https://dentalhealth-mocha.vercel.app/',
+        image: imgDental,
     },
 ];
