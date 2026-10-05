@@ -27,7 +27,7 @@ export default function FooterMeta() {
             textTransform: 'uppercase',
             color: 'rgba(255,255,255,0.4)',
             letterSpacing: '1px',
-            zIndex: 5,
+            zIndex: 20,
             pointerEvents: 'none',
             flexWrap: 'wrap',
             gap: '15px'

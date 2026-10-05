@@ -1,17 +1,20 @@
 import React, { memo, useMemo } from 'react';
-import ProjectCard from './ProjectCard';
+import FlexCarousel from './FlexCarousel';
 
 /**
  * 🎡 CAROUSEL COMPONENT
- * Handles the infinite horizontal scroll of projects.
- * Uses a multiplication of the project list to ensure the loop is seamless.
+ * Replaced with <FlexCarousel /> from React Bits (WebGL liquid distortion).
  */
-const Carousel = memo(({ onClick, projects }) => {
-    // We duplicate the project list to create a seamless infinite loop illusion.
-    // 4x is usually enough to cover the screen width during transition.
-    const extendedProjects = useMemo(() => {
+const Carousel = memo(({ projects, onClick, onSelect, onOpenDetail }) => {
+    const items = useMemo(() => {
         if (!projects || projects.length === 0) return [];
-        return [...projects, ...projects, ...projects, ...projects];
+        return projects.map((p) => ({
+            src: p.image,
+            alt: p.title,
+            title: p.title,
+            subtitle: p.category,
+            ...p,
+        }));
     }, [projects]);
 
     return (
@@ -19,23 +22,27 @@ const Carousel = memo(({ onClick, projects }) => {
             className="carousel-container"
             style={{
                 position: 'absolute',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                width: '100vw',
+                inset: 0,
+                width: '100%',
+                height: '100%',
                 overflow: 'hidden',
-                pointerEvents: 'auto',
                 zIndex: 10,
             }}
         >
-            <div className="carousel-track">
-                {extendedProjects.map((proj, idx) => (
-                    <ProjectCard
-                        key={`${proj.id}-${idx}`}
-                        project={proj}
-                        onClick={onClick}
-                    />
-                ))}
-            </div>
+            <FlexCarousel
+                items={items}
+                preset="liquid"
+                intro="rise"
+                cardHeight={0.42}
+                gap={16}
+                radius={8}
+                squeeze={0.2}
+                captureWheel
+                focusOnClick
+                captions
+                onSelect={onSelect}
+                onOpenDetail={onOpenDetail || ((proj, e) => onClick && onClick(e, proj))}
+            />
         </div>
     );
 });

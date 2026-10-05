@@ -9,18 +9,15 @@
  * - category: Tipo de proyecto (ej. Web · Gastronomía, App Móvil, Branding).
  * - year: Año de realización.
  * - description: Una descripción corta que cautive al usuario (se muestra al abrir el proyecto).
- * - url: El link hacia el proyecto en vivo o repositorio.
- * - image: La ruta de la imagen. Puedes usar:
- *    a) Cargar una imagen local en: src/assets/images/tu-proyecto.jpg
- *       y luego importarla arriba: import imgProyecto from '../assets/images/tu-proyecto.jpg';
- *    b) Usar una URL externa directa (como se muestra abajo).
+ * - url: El link hacia el proyecto en vivo o repositorio (dejar '' si aún no está online).
+ * - image: La ruta de la imagen local importada.
  */
 
 import imgPizzaAura from '../assets/images/aurapizza.png';
-import imgWebsiteGym from '../assets/images/gym.png';
-import imgHubbica from '../assets/images/hubbica.png';
-import imgAntojitos from '../assets/images/antojitos.png';
-import imgOficlic from '../assets/images/oficlic.png';
+import imgWebsiteGym from '../assets/images/website-gym.jpg';
+import imgVeluno from '../assets/images/veluno.png';
+import imgSmile from '../assets/images/smile.png';
+import imgTerranova from '../assets/images/terranova.png';
 import imgSkin from '../assets/images/skin.png';
 import imgDental from '../assets/images/dental.png';
 
@@ -45,30 +42,30 @@ export const projects = [
     },
     {
         id: 3,
-        title: 'Hubbica',
-        category: 'COWORKING · SHARED SPACES',
+        title: 'Veluno',
+        category: 'CREATIVE STUDIO · DIGITAL DESIGN',
         year: '2026',
-        description: 'Plataforma para la gestión y reserva de espacios de trabajo colaborativos. Interfaz limpia y funcional orientada a la productividad.',
-        url: 'https://hubbica.vercel.app/',
-        image: imgHubbica,
+        description: 'Identidad visual y experiencia interactiva moderna. Enfoque en diseño vanguardista, equilibrio espacial y transiciones elegantes.',
+        url: 'https://veluno-sigma.vercel.app/', 
+        image: imgVeluno,
     },
     {
         id: 4,
-        title: 'Antojitos',
-        category: 'SWEETS · BAKERY WEB',
+        title: 'Smile',
+        category: 'HEALTH & BEAUTY · STUDIO',
         year: '2026',
-        description: 'E-commerce artesanal de pastelería personalizada. Diseño suave y acogedor que invita a explorar momentos dulces.',
-        url: 'https://antojitoweb.netlify.app/',
-        image: imgAntojitos,
+        description: 'Plataforma integral enfocada en salud y estética dental. Experiencia visual limpia, luminosa y altamente intuitiva.',
+        url: 'https://smile-dnt.netlify.app/', 
+        image: imgSmile,
     },
     {
         id: 5,
-        title: 'Oficlic',
-        category: 'SERVICES · PROFESSIONAL CONNECT',
+        title: 'Terranova',
+        category: 'ARCHITECTURE · REAL ESTATE',
         year: '2026',
-        description: 'Directorio inteligente que conecta problemas con profesionales expertos. Enfoque directo, confiable y de alta usabilidad.',
-        url: 'https://officlic-header-react-magic.vercel.app/',
-        image: imgOficlic,
+        description: 'Espacio digital para desarrollos y proyectos arquitectónicos. Composición estructurada, sobria y de alto impacto visual.',
+        url: 'https://terranova-clinic.vercel.app/', 
+        image: imgTerranova,
     },
     {
         id: 6,
